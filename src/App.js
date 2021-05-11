@@ -1,7 +1,10 @@
 import React from 'react';
 import listSvg from './assets/img/list.svg'
-import List from "./components/List";
-import AddListButton from "./components/AddButtonList";
+import List from "./components/List/List";
+import AddButtonList from "./components/AddList/AddButtonList";
+
+import DB from './assets/db.json';
+
 
 function App() {
     return (
@@ -30,7 +33,7 @@ function App() {
                     }
                 ]}
                 />
-                <AddListButton/>
+                <AddButtonList colors={DB.colors}/>
 
             </div>
         </div>
