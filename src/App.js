@@ -18,23 +18,13 @@ function App() {
                     }
                 ]}
                 />
-                <List items={[
-                    {
-                        color: 'green',
-                        name: 'Покупки',
-                    },
-                    {
-                        color: 'blue',
-                        name: 'Фронтенд',
-                    },
-                    {
-                        color: 'pink',
-                        name: 'Фильмы и сериалы',
-                    }
-                ]}
-                />
+                <List items={DB.lists.map(item => {
+                    console.log(DB.colors.filter(color => color.id === item.colorId))
+                    item.color = DB.colors.filter(color => color.id === item.colorId)[0].name;
+                     // console.log(item)
+                    return item;
+                })}/>
                 <AddButtonList colors={DB.colors}/>
-
             </div>
         </div>
     );
